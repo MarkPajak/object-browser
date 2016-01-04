@@ -17,8 +17,9 @@ phonecatServices.factory('Phone', ['$resource',
 
 phonecatServices.factory('Phone_index', ['$resource',
   function($resource){
-    return $resource('http://museums.bristol.gov.uk/m-shed/index-:phoneId.json', {}, {
-      query: {method:'GET', params:{index:'stories'}, isArray:true}
+    return $resource('http://museums.bristol.gov.uk/m-shed/index-:listType.json', {}, {
+      
+	   query_index: {method:'GET', params:{}, isArray:true}
     });
 
   }]);

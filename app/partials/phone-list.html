@@ -11,10 +11,8 @@
       </select>
 
 Filter oNO
-      <select ng-model="phoneId">
-        <option value="objects">objectis</option>
-        <option value="stories">stories</option>
-      </select>
+ 
+	 <select ng-change="update(listType)" ng-options="item as item.label for item in items " ng-model="listType"></select>
 
 
 
