@@ -1,6 +1,6 @@
-var phonecatAnimations = angular.module('phonecatAnimations', ['ngAnimate']);
+var museum_objectcatAnimations = angular.module('museum_objectcatAnimations', ['ngAnimate']);
 
-phonecatAnimations.animation('.phone', function() {
+museum_objectcatAnimations.animation('.museum_object', function() {
 
   var animateUp = function(element, className, done) {
     if(className != 'active') {

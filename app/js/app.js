@@ -2,27 +2,27 @@
 
 /* App Module */
 
-var phonecatApp = angular.module('phonecatApp', [
+var museum_objectcatApp = angular.module('museum_objectcatApp', [
   'ngRoute',
-  'phonecatAnimations',
-  'phonecatControllers',
-  'phonecatFilters',
-  'phonecatServices',
+  'museum_objectcatAnimations',
+  'museum_objectcatControllers',
+  'museum_objectcatFilters',
+  'museum_objectcatServices',
   'angularUtils.directives.dirPagination'
 ]);
 
-phonecatApp.config(['$routeProvider',
+museum_objectcatApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
-      when('/phones', {
-        templateUrl: 'partials/phone-list.html',
-        controller: 'PhoneListCtrl'
+      when('/', {
+        templateUrl: 'partials/museum_object-list.html',
+        controller: 'museum_objectListCtrl'
       }).
-      when('/id/:phoneId', {
-        templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
+      when('/id/:museum_objectId', {
+        templateUrl: 'partials/museum_object-detail.html',
+        controller: 'museum_objectDetailCtrl'
       }).
       otherwise({
-        redirectTo: '/phones'
+        redirectTo: '/'
       });
   }]);

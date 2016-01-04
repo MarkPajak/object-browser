@@ -2,12 +2,12 @@
 
 /* Services */
 
-var phonecatServices = angular.module('phonecatServices', ['ngResource']);
+var museum_objectcatServices = angular.module('museum_objectcatServices', ['ngResource']);
 
-phonecatServices.factory('Phone', ['$resource',
+museum_objectcatServices.factory('museum_object', ['$resource',
   function($resource){
-    return $resource('http://museums.bristol.gov.uk/m-shed/id/:phoneId.json', {}, {
-      query: {method:'GET', params:{phoneId:phoneId}, isArray:true}
+    return $resource('http://museums.bristol.gov.uk/m-shed/id/:museum_objectId.json', {}, {
+      query: {method:'GET', params:{museum_objectId:'museum_objectId'}, isArray:true}
     });
 
   }]);
@@ -15,7 +15,7 @@ phonecatServices.factory('Phone', ['$resource',
 
 
 
-phonecatServices.factory('Phone_index', ['$resource',
+museum_objectcatServices.factory('museum_object_index', ['$resource',
   function($resource){
     return $resource('http://museums.bristol.gov.uk/m-shed/index-:listType.json', {}, {
       

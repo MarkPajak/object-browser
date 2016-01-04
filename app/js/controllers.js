@@ -2,16 +2,16 @@
 
 /* Controllers */
 
-var phonecatControllers = angular.module('phonecatControllers', []);
+var museum_objectcatControllers = angular.module('museum_objectcatControllers', []);
 
   
 
 	
-phonecatControllers.controller('PhoneListCtrl', ['$scope',  'Phone_index',
-  function($scope, Phone) {
+museum_objectcatControllers.controller('museum_objectListCtrl', ['$scope',  'museum_object_index',
+  function($scope, museum_object) {
 $scope.listType = 'stories';
-$scope.phones = Phone.query_index({listType:$scope.listType});
-//    $scope.phones = Phone.query();
+$scope.museum_objects = museum_object.query_index({listType:$scope.listType});
+//    $scope.museum_objects = museum_object.query();
     $scope.orderProp = 'age';
 		$scope.items = [{
   id: 1,
@@ -21,19 +21,27 @@ $scope.phones = Phone.query_index({listType:$scope.listType});
   id: 2,
   label: 'objects',
   subItem: { name: 'objects' }
+}, {
+  id: 3,
+  label: 'multimedia',
+  subItem: { name: 'multimedia' }
+}, {
+  id: 4,
+  label: 'all',
+  subItem: { name: 'all' }
 }];
 $scope.selected = $scope.items[0];
  $scope.update = function() {
-console.log($scope.listType)
-     $scope.phones = Phone.query_index({listType:$scope.listType.label});
+
+     $scope.museum_objects = museum_object.query_index({listType:$scope.listType.label});
     };
 	
   }]);
 
-phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Phone',
-  function($scope, $routeParams, Phone) {
-    $scope.phone = Phone.get({phoneId: $routeParams.phoneId}, function(phone) {
-      $scope.mainImageUrl = phone.images[0];
+museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope', '$routeParams', 'museum_object',
+  function($scope, $routeParams, museum_object) {
+    $scope.museum_object = museum_object.get({museum_objectId: $routeParams.museum_objectId}, function(museum_object) {
+      $scope.mainImageUrl = "http://museums.bristol.gov.uk/multimedia/entry.php?request=resource&irn="+museum_object.images[0].image+"&width=600&format=jpeg";
     });
 
     $scope.setImage = function(imageUrl) {
