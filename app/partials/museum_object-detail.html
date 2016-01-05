@@ -5,9 +5,9 @@
 }
 </style>
 <div class="museum_object-images">
-  <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{museum_object.images.image}}.jpg"
+  <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{museum_object.images[0].image}}.jpg"
        class="museum_object"
-       ng-repeat="img in museum_object.images"
+       ng-repeat="images in museum_object.images"
        ng-class="{active: mainImageUrl==img}">
 </div>
 
@@ -18,7 +18,7 @@
 <ul class="museum_object-thumbs">
   <li ng-repeat="img in museum_object.images">
 
-    <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{img.image}}.jpg" ng-click="setImage(http://museums.bristol.gov.uk/m-shed/assets/{{img.image}}.jpg)">
+    <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{img.image}}.jpg" ng-click="setImage(img)">
   </li>
 </ul>
 

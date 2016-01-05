@@ -45,6 +45,7 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope', '$r
     });
 
     $scope.setImage = function(imageUrl) {
+
       $scope.mainImageUrl = imageUrl;
     };
   }]);
