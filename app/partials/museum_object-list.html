@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-2">
+      <!--Sidebar content-->
+ 
+		<p>Choose a list:  <select ng-change="update(listType)" ng-options="item as item.label for item in items " ng-model="listType"></select>
+		<p>Search: <input ng-model="query">
+		<p>Sort by:
+		<select ng-model="orderProp">
+        <option value="name">Alphabetical</option>
+        <option value="age">Newest</option>
+		</select>
+
+
+
+
+
+
+
+
+    </div>
+    <div class="col-md-10">
+      <!--Body content-->
+
+      <ul class="museum_objects">
+
+<li
+ dir-paginate="museum_object in museum_objects |filter:query|orderBy:orderProp|itemsPerPage:10"
+    class="thumbnail museum_object-listing">
+          <a href="#/id/{{museum_object.id}}" class="thumb">
+		  <div class="thumb_box">
+		  <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{museum_object.image}}.jpg"></a>
+		  </div>
+          <a href="#/id/{{museum_object.id}}">{{museum_object.name + ": " + museum_object.type[0]}}</a>
+          <p>{{museum_object.description}}</p>
+        </li>
+      </ul>
+<dir-pagination-controls></dir-pagination-controls>
+    </div>
+  </div>
+</div>

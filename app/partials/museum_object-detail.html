@@ -1,0 +1,125 @@
+<style>
+/* in the css file or in a style block */
+.angular-with-newlines {
+    white-space: pre-wrap;
+}
+</style>
+<div class="museum_object-images">
+  <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{museum_object.images.image}}.jpg"
+       class="museum_object"
+       ng-repeat="img in museum_object.images"
+       ng-class="{active: mainImageUrl==img}">
+</div>
+
+<h1>{{museum_object.name}}</h1>
+<div class="angular-with-newlines">
+<p >{{museum_object.description }} </p>
+</div>
+<ul class="museum_object-thumbs">
+  <li ng-repeat="img in museum_object.images">
+
+    <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{img.image}}.jpg" ng-click="setImage(http://museums.bristol.gov.uk/m-shed/assets/{{img.image}}.jpg)">
+  </li>
+</ul>
+
+<ul class="specs">
+  <li>
+    <!--<span>Availability and Networks</span>
+    <dl>
+      <dt>Availability</dt>
+      <dd ng-repeat="availability in museum_object.availability">{{availability}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Battery</span>
+    <dl>
+      <dt>Type</dt>
+      <dd>{{museum_object.battery.type}}</dd>
+      <dt>Talk Time</dt>
+      <dd>{{museum_object.battery.talkTime}}</dd>
+      <dt>Standby time (max)</dt>
+      <dd>{{museum_object.battery.standbyTime}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Storage and Memory</span>
+    <dl>
+      <dt>RAM</dt>
+      <dd>{{museum_object.storage.ram}}</dd>
+      <dt>Internal Storage</dt>
+      <dd>{{museum_object.storage.flash}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Connectivity</span>
+    <dl>
+      <dt>Network Support</dt>
+      <dd>{{museum_object.connectivity.cell}}</dd>
+      <dt>WiFi</dt>
+      <dd>{{museum_object.connectivity.wifi}}</dd>
+      <dt>Bluetooth</dt>
+      <dd>{{museum_object.connectivity.bluetooth}}</dd>
+      <dt>Infrared</dt>
+      <dd>{{museum_object.connectivity.infrared | checkmark}}</dd>
+      <dt>GPS</dt>
+      <dd>{{museum_object.connectivity.gps | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Android</span>
+    <dl>
+      <dt>OS Version</dt>
+      <dd>{{museum_object.android.os}}</dd>
+      <dt>UI</dt>
+      <dd>{{museum_object.android.ui}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Size and Weight</span>
+    <dl>
+      <dt>Dimensions</dt>
+      <dd ng-repeat="dim in museum_object.sizeAndWeight.dimensions">{{dim}}</dd>
+      <dt>Weight</dt>
+      <dd>{{museum_object.sizeAndWeight.weight}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Display</span>
+    <dl>
+      <dt>Screen size</dt>
+      <dd>{{museum_object.display.screenSize}}</dd>
+      <dt>Screen resolution</dt>
+      <dd>{{museum_object.display.screenResolution}}</dd>
+      <dt>Touch screen</dt>
+      <dd>{{museum_object.display.touchScreen | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Hardware</span>
+    <dl>
+      <dt>CPU</dt>
+      <dd>{{museum_object.hardware.cpu}}</dd>
+      <dt>USB</dt>
+      <dd>{{museum_object.hardware.usb}}</dd>
+      <dt>Audio / headmuseum_object jack</dt>
+      <dd>{{museum_object.hardware.audioJack}}</dd>
+      <dt>FM Radio</dt>
+      <dd>{{museum_object.hardware.fmRadio | checkmark}}</dd>
+      <dt>Accelerometer</dt>
+      <dd>{{museum_object.hardware.accelerometer | checkmark}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Camera</span>
+    <dl>
+      <dt>Primary</dt>
+      <dd>{{museum_object.camera.primary}}</dd>
+      <dt>Features</dt>
+      <dd>{{museum_object.camera.features.join(', ')}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Additional Features</span>
+    <dd>{{museum_object.additionalFeatures}}</dd>-->
+  </li>
+</ul>
