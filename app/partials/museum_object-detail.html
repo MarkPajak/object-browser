@@ -5,10 +5,10 @@
 }
 </style>
 <div class="museum_object-images">
-  <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{museum_object.images[0].image}}.jpg"
+ <img ng-src="http://museums.bristol.gov.uk/multimedia/entry.php?request=resource&irn={{img.image}}&width=600&format=jpeg"
        class="museum_object"
-       ng-repeat="images in museum_object.images"
-       ng-class="{active: mainImageUrl==img}">
+       ng-repeat="img in museum_object.images"
+       ng-class="{active: mainImageUrl==img.image}">
 </div>
 
 <h1>{{museum_object.name}}</h1>
@@ -16,11 +16,12 @@
 <p >{{museum_object.description }} </p>
 </div>
 <ul class="museum_object-thumbs">
-  <li ng-repeat="img in museum_object.images">
-
-    <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{img.image}}.jpg" ng-click="setImage(img)">
+ <li ng-repeat="img in museum_object.images">
+    <img ng-src="http://museums.bristol.gov.uk/multimedia/entry.php?request=resource&irn={{img.image}}&width=600&format=jpeg" ng-click="setImage(img.image)">
   </li>
 </ul>
+
+
 
 <ul class="specs">
   <li>

@@ -31,7 +31,7 @@ body {
   float: left;
   margin: -0.5em 1em 1.5em 0;
   padding-bottom: 1em;
-  height: 100px;
+  height: auto;
   width: 100px;
   
 }
@@ -50,7 +50,7 @@ img.museum_object {
   background-color: white;
   padding: 2em;
   height: 400px;
-  width: 400px;
+  width: auto;
   display: none;
 }
 
@@ -72,7 +72,7 @@ ul.museum_object-thumbs li {
 }
 
 ul.museum_object-thumbs img {
-  height: 100px;
+  height: auto;
   width: 100px;
   padding: 1em;
 }
