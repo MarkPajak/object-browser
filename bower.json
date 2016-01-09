@@ -13,6 +13,7 @@
     "angular-route": "1.4.x",
     "angular-resource": "1.4.x",
     "angular-animate": "1.4.x",
+    "videogular": "1.4.x",
 	"angular-utils-pagination": "0.9.3"
 	
   }
