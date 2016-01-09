@@ -15,18 +15,26 @@ $scope.museum_objects = museum_object.query_index({listType:$scope.listType});
     $scope.orderProp = 'age';
 		$scope.items = [{
   id: 1,
+  label: 'themes',
+  subItem: { name: 'themes' }
+},{
+  id: 2,
+  label: 'displays',
+  subItem: { name: 'displays' }
+},{
+  id: 3,
   label: 'stories',
   subItem: { name: 'stories' }
 }, {
-  id: 2,
+  id: 4,
   label: 'objects',
   subItem: { name: 'objects' }
 }, {
-  id: 3,
+  id: 5,
   label: 'multimedia',
   subItem: { name: 'multimedia' }
 }, {
-  id: 4,
+  id: 6,
   label: 'all',
   subItem: { name: 'all' }
 }];
