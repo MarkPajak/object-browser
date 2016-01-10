@@ -14,7 +14,6 @@ museum_objectcatServices.factory('museum_object', ['$resource',
 
 
 
-
 museum_objectcatServices.factory('museum_object_index', ['$resource',
   function($resource){
     return $resource('http://museums.bristol.gov.uk/m-shed/index-:listType.json', {}, {
