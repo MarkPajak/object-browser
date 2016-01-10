@@ -6,13 +6,18 @@ body {
 
 .thumb_box{
   float: left;
-  position:absolute;
-  height: 100px;
+  position:relative;
+  height: 145px;
   width: 100px;
   overflow:hidden;
+  margin-right:5px;
 
 }
 
+.list-group-item{
+
+height:150px;
+}
 
 .museum_object-images {
   background-color: white;
