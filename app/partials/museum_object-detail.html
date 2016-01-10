@@ -25,7 +25,7 @@ $(document).scrollTop(0);
 
       
 
-        <!-- First Featurette -->
+        <!-- story Featurette -->
         <div class="featurette" id="about">
             <img class="museum_object featurette-image img-responsive pull-right" ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{img.image}}_detail.jpg"
 			 
@@ -37,27 +37,40 @@ $(document).scrollTop(0);
             <p class="lead angular-with-newlines ">{{museum_object.description}}</p>
         </div>
 
-        <hr class="featurette-divider"  ng-repeat="img in museum_object.images">
+        <hr class="featurette-divider" >  
 
-        <!-- Second Featurette -->
+        <!-- image Featurette -->
         <div class="featurette" id="services"  ng-repeat="img in museum_object.images">
             <img class="featurette-image img-circle img-responsive" ng-class-odd="'pull-left'"  ng-class-even="'pull-right'" ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{img.image}}_detail.jpg">
-            
-            <p class="lead angular-with-newlines ">{{img.description}}</p>
-			  <div class="row">
-                <div class="col-lg-12">
+              <div class="col-lg-12">
                     <p>image: {{img.copyright}}</p>
                 </div>
+            <p class="lead angular-with-newlines ">{{img.description}}</p>
+			  <div class="row">
+              
+            </div>
+        </div>
+		
+		  <hr class="featurette-divider" ><span class="text-muted" ng-hide="museum_object.objects.length==0"><h4>Related objects...</h4></span>
+
+        <!-- object Featurette -->
+        <div class="featurette" id="services"  ng-repeat="object in museum_object.objects">
+            <img class="featurette-image img-circle img-responsive" ng-class-odd="'pull-left'"  ng-class-even="'pull-right'" ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{object.image}}_detail.jpg">
+			<div class="col-lg-12">
+                    <p>image: {{object.copyright}}</p>
+                </div>            
+			<h2 class="featurette-heading">{{object.name}}               
+            </h2>
+            <p class="lead angular-with-newlines ">{{object.description}}</p>
+			  <div class="row">
+               
             </div>
         </div>
 
 
         <hr class="featurette-divider">
 
-        <!-- Footer -->
-        <footer>
-          
-        </footer>
+       
 
     </div>
     <!-- /.container -->
@@ -122,7 +135,10 @@ $(document).scrollTop(0);
 </div>
 <a href="#/"  class="list-group-item" >back to index</a>
 
-
+ <!-- Footer -->
+        <footer>
+          
+        </footer>
 
 
  
