@@ -4,14 +4,14 @@
     white-space: pre-wrap;
 }
 </style>
-<a href="#/"  class="list-group-item" >back to index</a>
+
 <script>
 $(document).scrollTop(0);
 </script>
 <!-- Page Content -->
     <div class="container">
 
-        <hr class="featurette-divider">
+      
 
         <!-- First Featurette -->
         <div class="featurette" id="about">
@@ -34,6 +34,11 @@ $(document).scrollTop(0);
                 <span class="text-muted"></span>
             </h2>
             <p class="lead angular-with-newlines ">{{img.description}}</p>
+			  <div class="row">
+                <div class="col-lg-12">
+                    <p>image: {{img.copyright}}</p>
+                </div>
+            </div>
         </div>
 
 
@@ -41,46 +46,35 @@ $(document).scrollTop(0);
 
         <!-- Footer -->
         <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
-                </div>
-            </div>
+          
         </footer>
 
     </div>
     <!-- /.container -->
-<div class="row">
 
-
-		<div class="col-md-8 center-block">
-			<div class="panel panel-default">
-			  <div class="panel-heading">Multimedia</div>
-			  <div class="panel-body">
-			    <div class="thumbnail details-thumb" ng-repeat="img in museum_object.images">
-      <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{img.image}}_thumb.jpg" ng-click="setImage(img)">
-    </div>
-			  </div>
-	</div>
-	</div>
-	
-</div>
 
  <div class="panel panel-default">
  <div class="panel-heading">More about this:</div>
  <div class="panel-body">
  <div class="list-group">
-  <a href="#/id/{{irn.id}}/{{irn.link}}"  class="list-group-item" ng-repeat="irn in museum_object.child">
-    {{irn.name}}
-  </a>
+  <a href="#/id/{{irn.id}}/{{irn.link}}"  class="list-group-item list-group-item-details" ng-repeat="irn in museum_object.child">
+		<div class="thumb_box_list thumb_box_list-details ">  
+		<img  ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{irn.image}}_thumb.jpg"/>
+		</div>   
+		{{irn.name}}
+	</a>
 </div>
 </div>
 </div>
  <div class="panel panel-default">
  <div class="panel-heading">This record is part of</div>
 <div class="panel-body">
- <div class="list-group">
-  <a href="#/id/{{irn.id}}/{{irn.link}}"  class="list-group-item" ng-repeat="irn in museum_object.parent">
+ <div class="list-group" >
+
+  <a href="#/id/{{irn.id}}/{{irn.link}}"  class="list-group-item list-group-item-details" ng-repeat="irn in museum_object.parent">
+  <div class="thumb_box_list thumb_box_list-details ">
+  	<img  ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{irn.image}}_thumb.jpg"/>
+	</div>
     {{irn.name}}
   </a>
 </div>
@@ -130,6 +124,7 @@ $(document).scrollTop(0);
  
 </div>
 </div>
+<a href="#/"  class="list-group-item" >back to index</a>
 
 
 

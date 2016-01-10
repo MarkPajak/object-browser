@@ -4,6 +4,16 @@ body {
   
  
 }
+.thumb_box_list{
+float:left;
+position:relative;
+overflow:hidden;
+margin-right:5px;
+}
+
+.thumb_box_list-details img{
+height:80px;
+}
 
 .details-thumb{
 	width: 90px;
@@ -25,8 +35,11 @@ body {
 }
 
 .list-group-item-index{
-
 height:150px;
+}
+
+.list-group-item-details{
+height:100px;
 }
 
 .museum_object-images {
