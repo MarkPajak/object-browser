@@ -29,7 +29,7 @@ museum_objectcatApp.config(['$routeProvider',
         templateUrl: 'partials/museum_object-list.html',
         controller: 'museum_objectListCtrl'
       }).
-      when('/id/:museum_objectId', {
+      when('/id/:museum_objectId/:link', {
         templateUrl: 'partials/museum_object-detail.html',
         controller: 'museum_objectDetailCtrl'
       }).

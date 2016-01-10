@@ -26,7 +26,7 @@
 			class="list-group media" 
 			dir-paginate="museum_object in museum_objects |filter:query|orderBy:orderProp|itemsPerPage:10">	
 				
-				<a href="#id/{{museum_object.id}}" class="list-group-item-index list-group-item" >
+				<a href="#id/{{museum_object.id}}/{{museum_object.link}}" class="list-group-item-index list-group-item" >
 					<div class="thumb_box">
 						<img  ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{museum_object.image}}_thumb.jpg">
 					</div>

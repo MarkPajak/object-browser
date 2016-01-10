@@ -1,9 +1,19 @@
 /* app css stylesheet */
 
 body {
-  padding-top: 20px;
+  
+ 
 }
 
+.details-thumb{
+	width: 90px;
+    float: left;
+	margin:5px;
+}
+.panel-heading{
+   background: #9CAEB7 !important;
+   color:white!important;
+}
 .thumb_box{
   float: left;
   position:relative;
@@ -20,7 +30,7 @@ height:150px;
 }
 
 .museum_object-images {
-  background-color: white;
+
   width: 450px;
   height: 450px;
   overflow: hidden;
@@ -52,7 +62,7 @@ img.museum_object {
   float: left;
   margin-right: 3em;
   margin-bottom: 2em;
-  background-color: white;
+
   padding: 2em;
   height: auto;
   width: 400px;
@@ -73,7 +83,7 @@ ul.museum_object-thumbs li {
   border: 1px solid black;
   display: inline-block;
   margin: 1em;
-  background-color: white;
+  background-color: #F4F4F4;
 }
 
 ul.museum_object-thumbs img {
@@ -165,6 +175,19 @@ h1 {
     margin: auto;
     overflow: hidden;
 }
+
+a.list-group-item:hover, a.list-group-item h4:focus {
+    text-decoration: none;
+
+
+	
+}
+
+a.list-group-item {
+    color: #555;
+ 
+}
+
 
 .videogular-container .skipButton {
     position: absolute;

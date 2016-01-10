@@ -7,34 +7,39 @@
 <script>
 $(document).scrollTop(0);
 </script>
- <a href="#/"  class="list-group-item" >
-   back to index
-  </a>
+
 <div class="row">
-	<div class="col-xs-12col-md-2">
-	<div class="museum_object-images">
+
+
+	<div class="col-md-12 center-block">
+			<div class="panel panel-default">
+			  <div class="panel-heading">{{museum_object.type[0]}}</div>
+			  <div class="panel-body angular-with-newlines">
+			 <div class="museum_object-images">
 	 <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{img.image}}_detail.jpg"
 		   class="museum_object"
 		   ng-repeat="img in museum_object.images"
 		   ng-class="{active: mainImageUrl==img.image}">
+	</div><h1>{{museum_object.name}}</h1> {{museum_object.description }}
+			  </div>
 	</div>
 	</div>
-	<div class="col-md-8 center-block">
-	<h1>{{museum_object.name}}</h1>
-	<div class="angular-with-newlines">
-	<p >{{museum_object.description }} </p>
-	</div>
-	</div>
-</div>
-<div class="row">
-  <div class="col-xs-6 col-md-3">
-    <div class="thumbnail" ng-repeat="img in museum_object.images">
-      <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{img.image}}_thumb.jpg" ng-click="setImage(img.image)">
+	
+		<div class="col-md-8 center-block">
+			<div class="panel panel-default">
+			  <div class="panel-heading">Multimedia</div>
+			  <div class="panel-body">
+			    <div class="thumbnail details-thumb" ng-repeat="img in museum_object.images">
+      <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{img.image}}_thumb.jpg" ng-click="setImage(img)">
     </div>
-  </div>
- </div> 
+			  </div>
+	</div>
+	</div>
+	
+</div>
+
  <div class="panel panel-default">
- <div class="panel-heading">Child Records</div>
+ <div class="panel-heading">More about this:</div>
  <div class="panel-body">
  <div class="list-group">
   <a href="#/id/{{irn.id}}"  class="list-group-item" ng-repeat="irn in museum_object.child">
@@ -44,7 +49,7 @@ $(document).scrollTop(0);
 </div>
 </div>
  <div class="panel panel-default">
- <div class="panel-heading">Parent Records</div>
+ <div class="panel-heading">This record is part of</div>
 <div class="panel-body">
  <div class="list-group">
   <a href="#/id/{{irn.id}}"  class="list-group-item" ng-repeat="irn in museum_object.parent">
@@ -99,7 +104,9 @@ $(document).scrollTop(0);
 </div>
 
 
-    
+     <a href="#/"  class="list-group-item" >
+   back to index
+  </a>
 
 
  <!-- <li>

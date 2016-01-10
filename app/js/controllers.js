@@ -4,8 +4,6 @@
 
 var museum_objectcatControllers = angular.module('museum_objectcatControllers', []);
 
-  
-
 	
 museum_objectcatControllers.controller('museum_objectListCtrl', ['$scope',  'museum_object_index',
   function($scope, museum_object) {
@@ -52,14 +50,11 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope', '$r
    $scope.museum_object = museum_object.get({museum_objectId: $routeParams.museum_objectId}, function(museum_object) {
       $scope.mainImageUrl = "http://museums.bristol.gov.uk/multimedia/entry.php?request=resource&irn="+museum_object.images[0].image+"&width=600&format=jpeg";
 	
-
-
-		
-
 	
     $scope.setImage = function(imageUrl) {
 
-      $scope.mainImageUrl = imageUrl;
+      $scope.mainImageUrl = imageUrl.image;
+	  $scope.museum_object.description = imageUrl.description;
     };
 	
 	})
@@ -143,7 +138,7 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope', '$r
                     url: "http://www.videogular.com/styles/themes/default/latest/videogular.css"
                 },
                 plugins: {
-                    poster: "http://museums.bristol.gov.uk/m-shed/assets/139523_detail.jpg"
+                    poster: "http://museums.bristol.gov.uk/m-shed/assets/"+vid.image+"_detail.jpg"
                 }
             };
 
