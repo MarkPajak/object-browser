@@ -4,50 +4,57 @@
     white-space: pre-wrap;
 }
 </style>
-<div class="museum_object-images">
- <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{img.image}}_detail.jpg"
-       class="museum_object"
-       ng-repeat="img in museum_object.images"
-       ng-class="{active: mainImageUrl==img.image}">
+<script>
+$(document).scrollTop(0);
+</script>
+ <a href="#/"  class="list-group-item" >
+   back to index
+  </a>
+<div class="row">
+	<div class="col-xs-12col-md-2">
+	<div class="museum_object-images">
+	 <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{img.image}}_detail.jpg"
+		   class="museum_object"
+		   ng-repeat="img in museum_object.images"
+		   ng-class="{active: mainImageUrl==img.image}">
+	</div>
+	</div>
+	<div class="col-md-8 center-block">
+	<h1>{{museum_object.name}}</h1>
+	<div class="angular-with-newlines">
+	<p >{{museum_object.description }} </p>
+	</div>
+	</div>
+</div>
+<div class="row">
+  <div class="col-xs-6 col-md-3">
+    <div class="thumbnail" ng-repeat="img in museum_object.images">
+      <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{img.image}}_thumb.jpg" ng-click="setImage(img.image)">
+    </div>
+  </div>
+ </div> 
+ <div class="panel panel-default">
+ <div class="panel-heading">Child Records</div>
+ <div class="panel-body">
+ <div class="list-group">
+  <a href="#/id/{{irn.id}}"  class="list-group-item" ng-repeat="irn in museum_object.child">
+    {{irn.name}}
+  </a>
+</div>
+</div>
+</div>
+ <div class="panel panel-default">
+ <div class="panel-heading">Parent Records</div>
+<div class="panel-body">
+ <div class="list-group">
+  <a href="#/id/{{irn.id}}"  class="list-group-item" ng-repeat="irn in museum_object.parent">
+    {{irn.name}}
+  </a>
+</div>
+</div>
 </div>
 
-<h1>{{museum_object.name}}</h1>
-<div class="angular-with-newlines">
-<p >{{museum_object.description }} </p>
-</div>
-<ul class="museum_object-thumbs">
- <li ng-repeat="img in museum_object.images">
-    <img ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{img.image}}_thumb.jpg" ng-click="setImage(img.image)">
-  </li>
-  
-</ul>
 
-
-<ul class="specs">
-  <li>
-    <span>Links</span>
-    <dl>
-      <dt>Parent Records</dt>
-	  
-      <dd ng-repeat="irn in museum_object.parent"> <a href="#/id/{{irn.id}}" class="thumb">{{irn.name}}</a></dd>
-    </dl>
-  </li>
-  <li>
-    <span>Links</span>
-    <dl>
-      <dt>Child Records</dt>
-	  
-      <dd ng-repeat="irn in museum_object.child"> <a href="#/id/{{irn.id}}" class="thumb">{{irn.name}}</a></dd>
-    </dl>
-  </li>
-   <li>
-    <span>Links</span>
-    <dl>
-      <dt></dt>
-	  
-      <a href="#/" class="thumb">back to index</a>
-    </dl>
-  </li>
 
 
 

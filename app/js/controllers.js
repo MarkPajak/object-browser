@@ -132,6 +132,20 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope', '$r
 							}
 						]
 					}
+					
+					controller.config = {
+                preload: "none",
+                autoHide: false,
+                autoHideTime: 3000,
+                autoPlay: false,
+                sources: controller.videos[0].sources,
+                theme: {
+                    url: "http://www.videogular.com/styles/themes/default/latest/videogular.css"
+                },
+                plugins: {
+                    poster: "http://museums.bristol.gov.uk/m-shed/assets/139523_detail.jpg"
+                }
+            };
 
 					controller.videos.push(source)
 									});
