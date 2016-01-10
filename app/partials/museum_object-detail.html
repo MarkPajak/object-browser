@@ -42,7 +42,7 @@ $(document).scrollTop(0);
  <div class="panel-heading">More about this:</div>
  <div class="panel-body">
  <div class="list-group">
-  <a href="#/id/{{irn.id}}"  class="list-group-item" ng-repeat="irn in museum_object.child">
+  <a href="#/id/{{irn.id}}/{{irn.link}}"  class="list-group-item" ng-repeat="irn in museum_object.child">
     {{irn.name}}
   </a>
 </div>
@@ -52,7 +52,7 @@ $(document).scrollTop(0);
  <div class="panel-heading">This record is part of</div>
 <div class="panel-body">
  <div class="list-group">
-  <a href="#/id/{{irn.id}}"  class="list-group-item" ng-repeat="irn in museum_object.parent">
+  <a href="#/id/{{irn.id}}/{{irn.link}}"  class="list-group-item" ng-repeat="irn in museum_object.parent">
     {{irn.name}}
   </a>
 </div>

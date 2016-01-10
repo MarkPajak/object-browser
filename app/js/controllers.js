@@ -52,7 +52,7 @@ museum_objectcatControllers.controller('museum_objectDetailCtrl', ['$scope', '$r
 	
 	
     $scope.setImage = function(imageUrl) {
-
+console.log(imageUrl)
       $scope.mainImageUrl = imageUrl.image;
 	  $scope.museum_object.description = imageUrl.description;
     };

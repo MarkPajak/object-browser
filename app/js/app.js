@@ -33,6 +33,10 @@ museum_objectcatApp.config(['$routeProvider',
         templateUrl: 'partials/museum_object-detail.html',
         controller: 'museum_objectDetailCtrl'
       }).
+	  when('/id/:museum_objectId', {
+        templateUrl: 'partials/museum_object-detail.html',
+        controller: 'museum_objectDetailCtrl'
+      }).
       otherwise({
         redirectTo: '/'
       });
