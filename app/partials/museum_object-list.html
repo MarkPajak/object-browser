@@ -1,37 +1,61 @@
-
+ <div class="featurette-heading ">
+    <h2> {{location}}</h2>
+  </div>
 <div class="container-fluid">
 <div class="row">
 	<div class="col-md-2">    
-		<div class="form-group">
+		<div style="display:none" class="form-group">
 			<label for="sel1">Select list:</label>
 			<select class="form-control" ng-change="update(listType)" ng-options="item as item.label for item in items " ng-model="listType" class="selectpicker"></select>
 		</div>
+		
+	
 		<div class="form-group">
 			<label for="usr">Search:</label>
-			<input class="form-control" ng-model="query">
+			<input class="form-control" ng-model="queryInput">
 		</div>
-		<div class="form-group">
+		<div style="display:none" class="form-group">
 			<label for="sel1">Sort by:</label>
 			<select class="form-control"  ng-model="orderProp">
 			<option value="name">Alphabetical</option>
 			<option value="age">Newest</option>
 			</select>
 		</div>
+	
+		<div class="form-group">
+			<label for="sel1">Artist:</label>
+			<select  ng-disabled="field.selectable" id="artistSelect" class="form-control"  ng-options="item.name as item.name for item in artists " ng-model="artist" class="selectpicker">
+			</select>
+		</div>
+		
+		
+		<div class="form-group">
+			<label for="sel1">Gallery:</label>
+			<select class="form-control"  ng-options="item as item for item in galleries " ng-model="location" class="selectpicker">
+			
+			</select>
+		</div>
+		
+		
+		
+		
 	</div>
-
 
 
 	 <div class="col-md-10">
 			<div 
 			class="list-group media" 
-			dir-paginate="museum_object in museum_objects |filter:query|orderBy:orderProp|itemsPerPage:10">	
+			dir-paginate="museum_object in museum_objects |filter:_artist:artist |filter:crabs:title|orderBy:orderProp|itemsPerPage:10">	
 				
-				<a href="#id/{{museum_object.id}}/{{museum_object.link}}" class="list-group-item-index list-group-item" >
+				<a   href="#id/{{museum_object.id}}/{{museum_object.link}}" class="list-group-item-index list-group-item" >
 					<div class="thumb_box">
 						<img  ng-src="http://museums.bristol.gov.uk/m-shed/assets/{{museum_object.image}}_thumb.jpg">
 					</div>
-					<h4 class="list-group-item-heading">{{museum_object.name + ": " + museum_object.type[0]}}</h4>	
+					<h4 class="list-group-item-heading">{{museum_object.name||museum_object.title|| museum_object.object_name+ ": " + museum_object.type[0]}}</h4>
+					<h4 class="list-group-item-heading">{{museum_object.number}}</h4>					
+					<h4 class="list-group-item-artist">{{museum_object.artists.name + " (" + museum_object.artists.birth+"-"+ museum_object.artists.death+ ") " }}</h4>	
 					<p class="list-group-item-text">{{museum_object.description}}</p>
+				
 				</a>
 			</div>   
 	<dir-pagination-controls></dir-pagination-controls>

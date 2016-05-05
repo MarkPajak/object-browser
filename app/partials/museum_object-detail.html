@@ -9,7 +9,9 @@
 $(document).scrollTop(0);
 </script>
 
-
+ <div class="featurette-heading ">
+    <h2> {{location}}</h2>
+  </div>
 
 <div class="panel-body">
  <div class="panel-heading">This {{museum_object.type[0]}} is part of <a href="#/id/{{irn.id}}/{{irn.link}}"   ng-repeat="irn in museum_object.parent">
@@ -62,11 +64,15 @@ $(document).scrollTop(0);
 			<h2 class="featurette-heading">{{object.name}}               
             </h2>
             <p class="lead angular-with-newlines ">{{object.description}}</p>
+			   <p class="lead angular-with-newlines ">{{object.credit_line}}</p>
+			
 			  <div class="row">
                
             </div>
         </div>
 
+               
+            </h2>
 
         <hr class="featurette-divider">
 
